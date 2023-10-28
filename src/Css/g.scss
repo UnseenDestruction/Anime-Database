@@ -1,0 +1,393 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: black;
+	color: white;
+
+	::-webkit-scrollbar { 
+		width: 8px; 
+	} 
+	  
+	  
+	::-webkit-scrollbar-thumb { 
+		background: red; 
+		border-radius: 10px; 
+		cursor: pointer;
+	} 
+	  
+	::-webkit-scrollbar-thumb:hover { 
+		background: blue; 
+	}
+
+	font-family: 'Fira Sans', sans-serif;
+}
+
+header {
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	h1 {
+		color: #AAA;
+		font-size: 36px;
+		font-weight: 400;
+		text-align: center;
+
+		strong {
+			color: #313131;
+		}
+	}
+}
+
+
+.content-wrap {
+	display: flex;
+
+	Nav {
+		flex: 1 1 250px;
+		max-width: 250px;
+		padding-right: 16px;
+
+			h3 {
+				color: #313131;
+				font-size: 24px;
+				margin-bottom: 16px;
+			}
+
+			a {
+				display: block;
+				padding: 8px 16px;
+				text-align: left;
+
+				color: #888;
+				font-size: 16px;
+				margin-bottom: 16px;
+
+				background-color: #EEE;
+				border-radius: 999px;
+				text-decoration: none;
+
+				transition: 0.4s;
+
+				&:hover {
+					background-color: #313131;
+					color: #AAA;
+				}
+			}
+	}
+
+	main {
+		flex: 1 1 0%;
+		padding: 0px 16px;
+
+		.main-head {
+			display: flex;
+			justify-content: flex-end;
+
+			.search-box {
+				display: flex;
+				justify-content: flex-end;
+				flex: 1 1 0%;
+				
+				input {
+					appearance: none;
+					background: none;
+					outline: none;
+					border: none;
+
+					position: relative;
+					left: -40%;
+					width: 100%;
+					max-width: 600px;
+					padding: 16px;
+					border-radius: 999px;
+					background-color: #EEE;
+					text-align: center;
+					font-size: 30px;
+
+					transition: 0.4s;
+
+					::placeholder {
+						color: #888;
+					}
+
+					&:focus, &:valid {
+						background-color: #313131;
+						color: #FFF;
+					}
+				}
+				
+			}
+		}
+
+		.anime-list {
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: 32px;
+			margin: 32px -8px 0px;
+
+			.anime-card {
+				flex: 1 1 33.333%;
+				max-width: 33.333%;
+				padding: 16px 8px;
+
+				a {
+					text-decoration: none;
+				}
+
+				figure {
+					display: block;
+					margin-bottom: 16px;
+
+					img {
+						display: block;
+						width: 100%;
+						height: 350px;
+						object-fit: cover;
+						border-radius: 16px;
+						box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+
+						transition: 0.4s;
+					}
+				}
+
+				h3 {
+					color: #313131;
+				}
+
+				&:hover {
+					figure {
+						img {
+							box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+							transform: scale(1.05);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*sm*/
+@media screen and (min-width: 0px) and (max-width: 800px) {
+	.content-wrap {
+		display: flex;
+
+		Nav {
+			flex: 1 1 250px;
+			max-width: 190px;
+			padding-left: 16px;
+			
+
+			a {
+				display: block;
+				padding: 8px 16px;
+				text-align: left;
+				width: 100%;
+				color: #888;
+				font-size: 10px;
+				margin-bottom: 16px;
+
+				background-color: #EEE;
+				border-radius: 999px;
+				text-decoration: none;
+
+				transition: 0.4s;
+
+				&:hover {
+					background-color: #313131;
+					color: #AAA;
+				}
+			}
+		}
+	
+		main {
+			flex: 1 1 0%;
+			padding: 0px 16px;
+	
+			.main-head {
+				display: flex;
+				justify-content: flex-end;
+	
+				.search-box {
+					display: flex;
+					justify-content: flex-end;
+					flex: 1 1 0%;
+					
+					input {
+						appearance: none;
+						background: none;
+						outline: none;
+						border: none;
+	
+						position: relative;
+						left: -10%;
+						width: 100%;
+						max-width: 400px;
+						padding: 16px;
+						border-radius: 999px;
+						background-color: #EEE;
+						text-align: center;
+						font-size: 15px;
+	
+						transition: 0.4s;
+	
+						::placeholder {
+							color: #888;
+						}
+
+	
+						&:focus, &:valid {
+							background-color: #313131;
+							color: #FFF;
+						}
+					}
+				}
+			}
+	
+			.anime-list {
+				display: flex;
+				flex-wrap: wrap;
+				margin-top: 32px;
+				margin: 32px -8px 0px;
+	
+				.anime-card {
+					flex: 1 1 33.333%;
+					max-width: 33.333%;
+					padding: 16px 8px;
+	
+					a {
+						text-decoration: none;
+						font-size: 10px;
+					}
+	
+					figure {
+						display: block;
+						margin-bottom: 16px;
+	
+						img {
+							display: block;
+							width: 100%;
+							height: 100px;
+							object-fit: cover;
+	
+							transition: 0.4s;
+						}
+					}
+	
+				
+				}
+			}
+		}
+	}
+}
+/*large-xl*/
+@media screen and (min-width: 801px) and (max-width: 1497px) {
+	.content-wrap {
+		display: flex;
+
+		Nav {
+			flex: 1 1 250px;
+			max-width: 250px;
+			padding-left: 16px;
+			
+
+			a {
+				display: block;
+				padding: 8px 16px;
+				text-align: left;
+				width: 100%;
+				color: #888;
+				margin-bottom: 16px;
+
+				background-color: #EEE;
+				border-radius: 999px;
+				text-decoration: none;
+
+				transition: 0.4s;
+
+				&:hover {
+					background-color: #313131;
+					color: #AAA;
+				}
+			}
+		}
+	
+		main {
+			flex: 1 1 0%;
+			padding: 0px 16px;
+	
+			.main-head {
+				display: flex;
+				justify-content: flex-end;
+	
+				.search-box {
+					display: flex;
+					justify-content: flex-end;
+					flex: 1 1 0%;
+					
+					input {
+						appearance: none;
+						background: none;
+						outline: none;
+						border: none;
+	
+						position: relative;
+						left: -10%;
+						width: 100%;
+						max-width: 400px;
+						padding: 16px;
+						border-radius: 999px;
+						background-color: #EEE;
+						text-align: center;
+						font-size: 15px;
+	
+						transition: 0.4s;
+	
+						::placeholder {
+							color: #888;
+						}
+	
+						&:focus, &:valid {
+							background-color: #313131;
+							color: #FFF;
+						}
+					}
+				}
+			}
+	
+			.anime-list {
+				display: flex;
+				flex-wrap: wrap;
+				margin-top: 32px;
+				margin: 32px -8px 0px;
+	
+				.anime-card {
+					flex: 1 1 33.333%;
+					max-width: 33.333%;
+					padding: 16px 8px;
+	
+					a {
+						text-decoration: none;
+					}
+	
+					figure {
+						display: block;
+						margin-bottom: 16px;
+	
+						img {
+							display: block;
+							width: 100%;
+							height: 200px;
+							object-fit: cover;
+	
+							transition: 0.4s;
+						}
+					}
+	
+				
+				}
+			}
+		}
+	}
+}
